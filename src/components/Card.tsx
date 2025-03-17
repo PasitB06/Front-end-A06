@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import InteractiveCard from "./InteractiveCard";
 import Rating from "@mui/material/Rating";
@@ -10,7 +11,7 @@ export default function Card ({venueName,imgSrc,ratingFunc}:{venueName:string,im
 
     return (
         <InteractiveCard contentName={venueName}>
-
+            
             <div className="w-full h-[70%] rounded-t-lg relative text-center " >
                     <Image 
                         src={imgSrc}
@@ -24,13 +25,13 @@ export default function Card ({venueName,imgSrc,ratingFunc}:{venueName:string,im
                     <h1>{venueName}</h1>
                 </div>
 
-                <Rating size="large" name={${venueName} Rating} id={${venueName} Rating} data-testid={${venueName} Rating} className="w-fit h-[15%]" 
+                <Rating size="large" name={`${venueName} Rating`} id={`${venueName} Rating`} data-testid={`${venueName} Rating`} className="w-fit h-[15%]" 
                     onChange={(event, value) => {ratingFunc(venueName, value); event.preventDefault(); }} onClick={(e) => e.stopPropagation()}
                 >
-
+                    
                 </Rating>
-
-
+                
+       
         </InteractiveCard>
 
     );
